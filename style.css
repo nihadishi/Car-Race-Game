@@ -1,0 +1,38 @@
+.race{
+    width: 100%;
+    height: 810px;
+    background-image: url(./race_img/download.jpeg);
+    position: relative;
+}
+.finishline{
+    height: 810px;
+    width: 10px;
+    background-color: red;
+    position: absolute;
+    left: 1200px;
+    top: 0;
+}
+.finishline2{
+    height: 810px;
+    width: 10px;
+    background-color: red;
+    position: absolute;
+    left: 1450px;
+    top: 0;
+}
+.cars{
+    position: absolute;
+    margin: 10px 0;
+}
+#bmw{
+    top: 0;
+    left: 0;
+}
+#merc{
+    top: 270px;
+    left: 0;
+}
+#prius{
+    top: 540px;
+    left: 0;
+}
