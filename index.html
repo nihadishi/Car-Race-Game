@@ -10,17 +10,37 @@
 <body>
     <div class="race">
         <div class="finish">
-            <div id="bmw" class="cars"><img src="/race_img/2023-bmw-x7-xdrive-40i134-641c5b3ca7165.jpg" alt="BMW-X7" width="250px" height="250px"></div>
-            <div id="merc" class="cars"><img src="/race_img/mercedes-amg-gt-63-s-e-performance.jpg" alt="MERCEDES_GT63S" width="250px" height="250px"></div>
-            <div id="prius" class="cars"><img src="/race_img/2012-toyota-prius-carbuzz-518462.jpg" alt="PRIUS" width="250px" height="250px"></div>
+            <div id="bmw" class="cars"><img src="/race_img/2023-bmw-x7-xdrive-40i134-641c5b3ca7165.jpg" alt="BMW-X7" width="250px" height="190px">BMW</div>
+            <div id="merc" class="cars"><img src="/race_img/mercedes-amg-gt-63-s-e-performance.jpg" alt="MERCEDES_GT63S" width="250px" height="190px"></div>
+            <div id="tesla" class="cars"><img src="/race_img//2018_Tesla_Model_S_75D.jpg" alt="TESLA" width="250px" height="190px"></div>
+            <div id="prius" class="cars"><img src="/race_img/2012-toyota-prius-carbuzz-518462.jpg" alt="PRIUS" width="250px" height="190px"></div>
         </div>
         <div class="finishline"></div>
         <div class="finishline2"></div>
 
     </div>
+    
+
+
+    <select name="select" id="carsselect">
+        <option value="Bmw">BMW X7</option>
+        <option value="Mercedes">MERCEDES GT63S</option>
+        <option value="Tesla">TESLA MODEL S</option>
+        <option value="Prius">PRIUS</option>
+    </select>
+    <label for="amount">Your Deposit:</label>
+    <input type="number" name="amount" id="amount">
+    <button onclick="deposit()">DEPOSIT</button><br>
+
     <button id="start">START</button>
     <button id="restart">RESTART</button>
+    <h1 id="depositTotal"></h1><br>
     
+    <audio src="./race_audio/WhatsApp Audio 2023-04-30 at 22.52.41.mp3" id="caraudio1"></audio>
+    <audio src="./race_audio/car-acceleration-inside-car-7087.mp3" id="caraudio2"></audio>
+
+
     <script src="/index.js"></script>
+    <!-- <script src="./resadin_ayaqqabisi.js"></script> -->
 </body>
 </html>

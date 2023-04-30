@@ -26,51 +26,44 @@ restartButton.addEventListener("click",()=>{
     car2.style.left = 0;
     car3.style.left = 0;
     car4.style.left = 0;
-    car1Speed = Math.random();
-    car2Speed = Math.random();
-    car3Speed = Math.random();
-    car4Speed = Math.random();
+    car1Speed = Math.random()*0.5;
+    car2Speed = Math.random()*0.5;
+    car3Speed = Math.random()*0.5;
+    car4Speed = Math.random()*0.5;
     clearInterval(looprace);
     carAudio1.pause();
+    carAudio2.pause();
 });
 
 function startRace(){
     carAudio1 = document.querySelector("#caraudio1");
+    carAudio2 = document.querySelector("#caraudio2");
     carAudio1.play();
-    car1dist += car1Speed;
-    car2dist += car2Speed;
-    car3dist += car3Speed;
+    carAudio2.play();
+    car1dist += car1Speed*1.5;
+    car2dist += car2Speed*1.5;
+    car3dist += car3Speed*1.5;
     car4dist += car4Speed;
     car1.style.left = car1dist+"px";
     car2.style.left = car2dist+"px";
     car3.style.left = car3dist+"px";
     car4.style.left = car4dist+"px";
-    console.log({
-        MERC: car1dist,
-        TESLA: car2dist,
-        BMW: car3dist,
-        PRIUS: car4dist
-    });
+    if(Math.max(car1dist,car2dist,car3dist,car4dist)>550) car4Speed=Math.random()*5;
+
     if(Math.max(car1dist,car2dist,car3dist,car4dist)>1200){
         clearInterval(looprace);
+        setTimeout(() => {
+            console.log("salam");
+        }, 1000);
         carAudio1.pause();
+        carAudio2.pause();
         
     }
+    
+    
         return Math.max(car1dist,car2dist,car3dist,car4dist);
    
     
 
 }
 
-function deposit(){
-    let deposits =parseInt(document.querySelector("#amount").value);
-    if(isNaN(deposits) || deposits<0) alert("Write Positive Numbers");
-    else{
-         document.querySelector("#depositTotal").innerHTML += deposits;
-         return deposits;
-    }
-}
-
-    let yourAmount=0;
-yourAmount+= deposit();
-// alert(yourAmount);
