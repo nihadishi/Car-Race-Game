@@ -5,6 +5,7 @@ let car3 = document.querySelector("#bmw");
 let car4 = document.querySelector("#prius");
 let startButton = document.querySelector("#start");
 let restartButton = document.querySelector("#restart");
+let depositButton = document.querySelector("#deposit");
 let car1Speed = Math.random();
 let car2Speed = Math.random();
 let car3Speed = Math.random();
@@ -13,6 +14,11 @@ let car1dist = 0;
 let car2dist = 0;
 let car3dist = 0;
 let car4dist = 0;
+
+
+
+
+
 
 startButton.addEventListener("click",()=>{
     this.looprace = setInterval(startRace,2);
@@ -45,12 +51,12 @@ function startRace(){
     car2.style.left = car2dist+"px";
     car3.style.left = car3dist+"px";
     car4.style.left = car4dist+"px";
-    console.log({
-        MERC: car1dist,
-        TESLA: car2dist,
-        BMW: car3dist,
-        PRIUS: car4dist
-    });
+    // console.log({
+    //     MERC: car1dist,
+    //     TESLA: car2dist,
+    //     BMW: car3dist,
+    //     PRIUS: car4dist
+    // });
     if(Math.max(car1dist,car2dist,car3dist,car4dist)>1200){
         clearInterval(looprace);
         carAudio1.pause();
@@ -62,15 +68,12 @@ function startRace(){
 
 }
 
-function deposit(){
+depositButton.addEventListener("click",()=>{
     let deposits =parseInt(document.querySelector("#amount").value);
-    if(isNaN(deposits) || deposits<0) alert("Write Positive Numbers");
-    else{
-         document.querySelector("#depositTotal").innerHTML += deposits;
-         return deposits;
-    }
-}
-
-    let yourAmount=0;
-yourAmount+= deposit();
-// alert(yourAmount);
+    let myOption = document.querySelector("#carselect").value;
+    // if(isNaN(deposits) || deposits<0) alert("Write Positive Numbers");
+    // else{}
+        //  document.querySelector("#depositTotal").innerHTML = myOption;
+    // }
+    console.log(myOption);
+})
